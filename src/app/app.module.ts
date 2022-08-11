@@ -5,18 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { OneWebComponentsAngularModule } from '@one/angular';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopBarComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule, 
-    FormsModule,
-  ],
+  declarations: [AppComponent,
+    TopBarComponent, TestComponent],
+  imports: [BrowserModule, AppRoutingModule, 
+    FormsModule,OneWebComponentsAngularModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
