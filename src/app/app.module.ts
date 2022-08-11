@@ -11,6 +11,6 @@ import { AbbaTableComponent } from './pages/abba-page/abba-table/abba-table.comp
   declarations: [AppComponent, TestComponent, AbbaTableComponent],
   imports: [BrowserModule, AppRoutingModule, OneWebComponentsAngularModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
