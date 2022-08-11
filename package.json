@@ -18,6 +18,10 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@one/angular": "^4.0.3",
+    "@one/design-tokens": "^4.0.0",
+    "@one/icons": "^4.1.1",
+    "@one/web-components": "^4.0.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
