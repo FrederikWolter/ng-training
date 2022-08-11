@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { OneWebComponentsAngularModule } from '@one/angular';
 import { TestComponent } from './test/test.component';
+import { LandingComponent } from './pages/landing-page/landing/landing.component';
 
 @NgModule({
   declarations: [AppComponent,
-    TopBarComponent, TestComponent],
+    TopBarComponent, TestComponent, LandingComponent],
   imports: [BrowserModule, AppRoutingModule, 
     FormsModule,OneWebComponentsAngularModule],
   providers: [],
