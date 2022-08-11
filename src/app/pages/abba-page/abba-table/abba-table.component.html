@@ -1,0 +1,21 @@
+<p>abba-table works!</p>
+<table>
+    <tr *ngFor="let project of projectList">
+        <ng-container *ngIf="project.abba == 'Kevin Latusinski'">
+            <td>
+                <a [title]="project.name + ' details'">
+                    {{ project.name }}
+                </a>
+            </td>
+            <td>
+                <p>{{ project.description }}</p>
+            </td>
+            <td>
+                <p>{{ project.year }}</p>
+            </td>
+            <td>
+                <p>{{ project.status }}</p>
+            </td>
+        </ng-container>
+    </tr>
+</table>

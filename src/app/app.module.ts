@@ -8,13 +8,23 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { OneWebComponentsAngularModule } from '@one/angular';
 import { TestComponent } from './test/test.component';
 import { LandingComponent } from './pages/landing-page/landing/landing.component';
+import { AbbaTableComponent } from './pages/abba-page/abba-table/abba-table.component';
 
 @NgModule({
-  declarations: [AppComponent,
-    TopBarComponent, TestComponent, LandingComponent],
-  imports: [BrowserModule, AppRoutingModule, 
-    FormsModule,OneWebComponentsAngularModule],
+  declarations: [
+    AppComponent,
+    TestComponent,
+    TopBarComponent,
+    AbbaTableComponent,
+    LandingComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    OneWebComponentsAngularModule
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
