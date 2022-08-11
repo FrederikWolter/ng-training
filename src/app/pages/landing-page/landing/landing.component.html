@@ -1,41 +1,46 @@
-
 <owc-grid container [columns]="3" [hGutter]="0" item [padding]="0" [vGutter]="0">
-    <owc-grid item s="1">
-        <owc-button [style.margin-left.px]="24">Confirm</owc-button>
-    </owc-grid>
-    <owc-grid item s="1">
-        <owc-input label="Username" required [style.width.%]="100">
+    <!-- region row 1 -->
+    <owc-grid item m="1" s="0"></owc-grid>
+
+    <owc-grid item m="1" style="background-color: '#fafafa'" [style.padding.px]="25">
+        <owc-input label="Username" required [style.width.%]="100" [style.margin.px]="5">
             <owc-icon slot="prefix" name="user"></owc-icon>
-          </owc-input>
-    </owc-grid>
-    <owc-grid item s="1">
-        <owc-input label="Password" type="password" required [style.width.%]="100">
+        </owc-input>
+
+        <owc-input label="Password" type="password" required [style.width.%]="100" [style.margin.px]="5">
             <owc-icon slot="prefix" name="log_on"></owc-icon>
-          </owc-input>
+        </owc-input>
+
+        <owc-button [style.margin.px]="10">Confirm</owc-button>
     </owc-grid>
 
-    <owc-grid item s="3">
-        <owc-button disable-ripple flat round type="button" variant="primary">
+    <owc-grid item m="1" s="0"></owc-grid>
+    <!-- endregion row 1 -->
+    
+    <!-- region row 2 -->
+    <owc-grid item m="1" s="0"></owc-grid>
+
+    <owc-grid item s="1" [style.padding-top.px]="20">
+        <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100" [style.margin-top.px]="10">
+            Button
+        </owc-button>
+        <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100" [style.margin-top.px]="10">
+            Button
+        </owc-button>
+        <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100" [style.margin-top.px]="10">
             Button
         </owc-button>
     </owc-grid>
-    <owc-grid item s="3">
-        <owc-button disable-ripple flat round type="button" variant="primary">
-            Button
-        </owc-button>
-    </owc-grid>
-    <owc-grid item s="3">
-        <owc-button disable-ripple flat round type="button" variant="primary">
-            Button
-        </owc-button>
-    </owc-grid>
+
+    <owc-grid item m="1" s="0"></owc-grid>
+    <!-- endregion row 2 -->
 </owc-grid>
 
-
-<!-- TODO change -->
-<br><br><br><br> 
-
-<owc-typography element="p" variant="title5">
-Bei einem dualen Studium gibt es den DH-Studenten, die Firma und die Hochschule als hauptsächliche Aktivisten.
-Der duale Student wechselt innerhalb von 3 Jahren immer wieder zwischen Firma und Hochschule, das heißt, dass der Student abwechselnd z.B. 3 Monate beim Unternehmen arbeitet und 3 Monate in der Hochschule einen Studiengang lernt.
+<owc-typography class="center" element="p" variant="title5" style="text-align: center;" [style.margin.px]="20" [style.width.%]="80">
+    <div [style.width.%]="80">
+        Bei einem dualen Studium gibt es den DH-Studenten, die Firma und die Hochschule als hauptsächliche Aktivisten.
+        Der duale Student wechselt innerhalb von 3 Jahren immer wieder zwischen Firma und Hochschule, das heißt, dass
+        der Student abwechselnd z.B. 3 Monate beim Unternehmen arbeitet und 3 Monate in der Hochschule einen Studiengang
+        lernt.
+    </div>
 </owc-typography>
