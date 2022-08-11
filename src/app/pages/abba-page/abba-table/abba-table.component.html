@@ -1,21 +1,40 @@
-<p>abba-table works!</p>
-<table>
-    <tr *ngFor="let project of projectList">
-        <ng-container *ngIf="project.abba == 'Kevin Latusinski'">
-            <td>
-                <a [title]="project.name + ' details'">
-                    {{ project.name }}
-                </a>
-            </td>
-            <td>
-                <p>{{ project.description }}</p>
-            </td>
-            <td>
-                <p>{{ project.year }}</p>
-            </td>
-            <td>
-                <p>{{ project.status }}</p>
-            </td>
+<owc-table #tableElement [height]="'auto'" [style]="'top: 50px'">
+    <owc-table-header elevated sticky>
+
+      <owc-table-header-cell width="auto" resizable>Titel</owc-table-header-cell>
+
+      <owc-table-header-cell width="auto" resizable>Jahrgang</owc-table-header-cell>
+
+      <owc-table-header-cell width="auto">Status</owc-table-header-cell>
+
+    </owc-table-header>
+
+    <owc-table-body>
+
+        <ng-container *ngFor="let project of projectList">
+
+            <owc-table-row *ngIf="project.abba == 'Kevin Latusinski'" expandable>
+
+                <owc-table-cell> {{ project.name }}</owc-table-cell>
+                
+                <owc-table-cell> {{ project.year }} </owc-table-cell>
+                
+                <owc-table-cell> {{ project.status }} </owc-table-cell>
+                
+                <div slot="expanded"> {{ project.description }} </div>
+
+            </owc-table-row>
+                
         </ng-container>
-    </tr>
-</table>
+
+    </owc-table-body>
+
+    <div slot="header">
+        All Ihre Projekte
+        <owc-button #buttonElement style="text-align: center !important;">
+            <owc-icon type="legacy" variant="primary" name="assign" style="filter: brightness(0) invert(1);"></owc-icon> 
+            Neu
+        </owc-button>
+    </div>
+  </owc-table>
+
