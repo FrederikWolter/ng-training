@@ -1,82 +1,46 @@
-<owc-input
-	label="Searchbar"
-	maxLength="20"
-	placeholder="Filter..."
-	type="text"
-	variant="filled"
-></owc-input>
-
 <div class="spacer">
-<owc-select-dropdown
-  #selectDropdownElement
-  [label]="'Dropdown'"
-  [limit]="5"
-  [placeholder]="'Wähle aus...'"
-  class="dropdown"
+  <owc-input
+    label="Searchbar"
+    maxLength="20"
+    placeholder="Filter..."
+    type="text"
+    variant="filled"
+    class="searchfilter"
+    [(ngModel)] = "value"
+    (inputChange)="onChange($event)"
+  ></owc-input>
+
+  <a routerLink="/apprenticepage/profile"
+    ><owc-button class="buttonPos">Profil</owc-button></a
   >
-  <owc-list-item>WI</owc-list-item>
-
-  <owc-list-item>AI</owc-list-item>
-
-  <owc-list-item>WING</owc-list-item>
-</owc-select-dropdown>
-
-<a routerLink="/apprenticepage/profile"><owc-button class="buttonPos">Profil</owc-button></a>
 </div>
 <div>
-<owc-table #tableElement drag-enabled height="auto" scroll-hide-timeout="1000" spacing="compact">
-  <owc-table-header elevated sticky>
-    <owc-table-header-cell width="auto" align="left" noClip="false">Thema</owc-table-header-cell>
-
-    <owc-table-header-cell width="auto">Ansprechpartner</owc-table-header-cell>
-
-    <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
-
-    <owc-table-header-cell width="auto"></owc-table-header-cell>
-  </owc-table-header>
-
-  <owc-table-body>
-    <owc-table-row expandable="true">
-      <owc-table-cell>Neukonzeptionierung von einer Applikation</owc-table-cell>
-      <owc-table-cell>Erik Maier</owc-table-cell>
-      <owc-table-cell>WI, AI</owc-table-cell>
-      <owc-table-cell><owc-button>Send E-Mail</owc-button></owc-table-cell>
-      <div slot="expanded">This is the expanded content for row 1</div>
-    </owc-table-row>
-
-    <owc-table-row>
-      <owc-table-cell>Entwicklung einer Webanwendung</owc-table-cell>
-      <owc-table-cell>Sean Schwarz</owc-table-cell>
-      <owc-table-cell>AI</owc-table-cell>
-      <owc-table-cell><owc-button>Send E-Mail</owc-button></owc-table-cell>
-    </owc-table-row>
-
-    <owc-table-row>
-      <owc-table-cell>Entwurf eines Datenbankschemas</owc-table-cell>
-      <owc-table-cell>Frederik Wolter</owc-table-cell>
-      <owc-table-cell>AI</owc-table-cell>
-      <owc-table-cell><owc-button>Send E-Mail</owc-button></owc-table-cell>
-    </owc-table-row>
-
-    <owc-table-row>
-      <owc-table-cell
-        >Erstellen einer Schnittstelle zwischen zwei Komponenten</owc-table-cell
+  <owc-table
+    #tableElement
+    drag-enabled
+    height="auto"
+    scroll-hide-timeout="1000"
+  >
+    <owc-table-header elevated sticky>
+      <owc-table-header-cell width="200px" align="left" noClip="false"
+        >Thema</owc-table-header-cell
       >
-      <owc-table-cell>Mike Metzger</owc-table-cell>
-      <owc-table-cell>AI, WI, WING</owc-table-cell>
-      <owc-table-cell><owc-button>Send E-Mail</owc-button></owc-table-cell>
-    </owc-table-row>
+      <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
+      <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
+      <owc-table-header-cell width="175px"></owc-table-header-cell>
+    </owc-table-header>
 
-    <owc-table-row>
-      <owc-table-cell
-        >Erstellen eines Formulares zum ausfüllen von Rechnungen</owc-table-cell
-      >
-      <owc-table-cell>Maximillian Dietz</owc-table-cell>
-      <owc-table-cell>AI, WI, WING</owc-table-cell>
-      <owc-table-cell><owc-button>Send E-Mail</owc-button></owc-table-cell>
-    </owc-table-row>
-  </owc-table-body>
+    <owc-table-body>
+      <ng-container *ngFor="let praxisphase of filteredPp">
+        <owc-table-row>
+          <owc-table-cell>{{ praxisphase.thema }}</owc-table-cell>
+          <owc-table-cell>{{ praxisphase.ansprechpartner }}</owc-table-cell>
+          <owc-table-cell>{{ praxisphase.beruf }}</owc-table-cell>
+          <owc-table-cell><owc-button onclick="">Send E-Mail</owc-button></owc-table-cell>
+        </owc-table-row>
+      </ng-container>
+    </owc-table-body>
 
-  <div slot="header">Praxisphasen</div>
-</owc-table>
+    <div slot="header">Praxisphasen</div>
+  </owc-table>
 </div>
