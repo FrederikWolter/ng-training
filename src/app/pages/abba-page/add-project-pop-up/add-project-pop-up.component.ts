@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
-import { Project, projectList } from '../abba-project';
+import { Project, projectList } from '../../../project-info';
 import { Components } from '@one/web-components';
 
 @Component({
@@ -14,12 +14,13 @@ export class AddProjectPopUpComponent implements OnInit {
   descriptionError = false;
   yearError = false;
 
-  project = {
+  project: Project = {
     id: 0,
     name: "",
     description: "",
     abba: "",
-    status: "",
+    job_group: undefined,
+    status: undefined,
     year: 0
   };
 
@@ -39,7 +40,8 @@ export class AddProjectPopUpComponent implements OnInit {
       name: "",
       description: "",
       abba: "",
-      status: "",
+      job_group: undefined,
+      status: undefined,
       year: 0
     }
   }
