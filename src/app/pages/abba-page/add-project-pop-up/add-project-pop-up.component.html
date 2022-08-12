@@ -3,6 +3,12 @@
 
     <owc-input label="Projektname" [(ngModel)]="project.name" required [error]="nameError" maxLength="50" type="text">
     </owc-input>
+    <owc-editable-dropdown compact disabled [label]="Job-Gruppe" [(ngModel)]="project.job_group" [limit]="limit" [notFoundText]="notFoundText" [placeholder]="placeholder" [popoverStyle]="popoverStyle" required [requiredText]="requiredText" [variant]="variant" (inputKeyDown)="onInputKeyDown($event.detail)" (panelClose)="onPanelClose($event.detail)" (panelOpen)="onPanelOpen($event.detail)" (selectChange)="onSelectChange($event.detail)">
+    <owc-list-item> AI</owc-list-item>
+    <owc-list-item selected>WI</owc-list-item>
+    <owc-list-item>WING</owc-list-item>
+  </owc-editable-dropdown>
+  </owc-chip>
     <owc-input label="Jahrgang" [(ngModel)]="project.year" required [error]="yearError">
     </owc-input>
     <owc-input label="Description" [(ngModel)]="project.description" required [error]="descriptionError">
