@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { Components } from '@one/web-components';
 
-import { Project, projectList } from '../abba-project';
+import { Project, projectList } from '../../../project-info';
 
 
 
@@ -12,7 +12,7 @@ import { Project, projectList } from '../abba-project';
   styleUrls: ['./abba-table.component.scss']
 })
 export class AbbaTableComponent implements OnInit {
-  projectList = projectList
+  projectList = projectList;
 
   @ViewChild('tableElement', { static: true }) tableElement!: Components.OwcTable;
   @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
