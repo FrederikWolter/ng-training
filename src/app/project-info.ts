@@ -8,6 +8,8 @@ export interface Project {
     status: undefined | 'offen' | 'bewerbungsphase' | 'besetzt';
 } 
   
+export const statusList: ('offen' | 'bewerbungsphase' | 'besetzt')[] = ['offen', 'bewerbungsphase', 'besetzt'];
+export const jobGroupList: ('AI' | 'WI' | 'WING')[] = ['AI', 'WI', 'WING'];
 export const projectList :Project[] = [
     {
         id: 1,
@@ -15,7 +17,7 @@ export const projectList :Project[] = [
         description: 'Einen Chatbot für die Ausbildungsabteilung als Webseite für Support',
         year: 2021,
         job_group: "AI",
-        abba: "Jens-Peter Fahrwerk",
+        abba: "Frederik",
         status: 'offen'
     },
     {
@@ -24,7 +26,7 @@ export const projectList :Project[] = [
         description: 'Kaffemaschine in 061 braucht Java software und Update',
         year: 2020,
         job_group: "WI",
-        abba: "Kevin Latusinski",
+        abba: "Kevin",
         status: 'besetzt'
     },
     {
@@ -33,7 +35,7 @@ export const projectList :Project[] = [
         description: 'Für 2023 muss neues Laptop-Rollout erstellt werden mit Google-Docs/Spreadsheet/Slides und Drive Schulung',
         year: 2020,
         job_group: "WING",
-        abba: "Kevin Latusinski",
+        abba: "Kevin",
         status: 'offen'
     }
 ];

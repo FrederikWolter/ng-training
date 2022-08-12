@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
-import { Project, projectList } from '../../../project-info';
+import { jobGroupList, Project, projectList } from '../../../project-info';
 import { Components } from '@one/web-components';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-add-project-pop-up',
@@ -14,6 +15,8 @@ export class AddProjectPopUpComponent implements OnInit {
   descriptionError = false;
   yearError = false;
 
+  @ViewChild('selectDropdownElement', { static: true }) selectDropdownElement!: Components.OwcSelectDropdown;
+  jobGroupList = jobGroupList;
   project: Project = {
     id: 0,
     name: "",
@@ -24,13 +27,15 @@ export class AddProjectPopUpComponent implements OnInit {
     year: 0
   };
 
-  constructor(private route:Router) { }
+  constructor(private userService: UsersService) { 
+    this.project.abba = this.userService.activeUser?.name || "Kein Abba gesetzt";
+  }
 
   ngOnInit() {
   }
 
-  open(){
-    console.log("Openned")
+  select(e: CustomEvent): void {
+    this.project.job_group = jobGroupList[e.detail[0]];
   }
 
   close(){
@@ -58,7 +63,8 @@ export class AddProjectPopUpComponent implements OnInit {
     }
 
     if(!(this.nameError || this.yearError || this.descriptionError)){
-      this.project.abba = 'Kevin Latusinski';
+      this.project.status = 'offen';
+      console.log(this.project)
       projectList.push(this.project);
       this.close();
     }
