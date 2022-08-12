@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Project, projectList } from '../abba-project';
 
+
+
+
 @Component({
   selector: 'app-abba-table',
   templateUrl: './abba-table.component.html',
@@ -17,3 +20,7 @@ export class AbbaTableComponent implements OnInit {
   }
 
 }
+
+
+
+
