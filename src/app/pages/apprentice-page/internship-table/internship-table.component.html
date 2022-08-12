@@ -6,32 +6,72 @@
     <owc-button routerLink="/apprentice/profile" style="margin-left:auto;">Profil</owc-button>
   </div>
 
-  <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
-    Praxisphasen für dich ...
-  </owc-typography>
+  <!-- filtered -->
+  <div *ngIf="userService.activeUser">
+    <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
+      Praxisphasen für dich ...
+    </owc-typography>
 
-  <div>
     <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
       <owc-table-header elevated sticky>
         <owc-table-header-cell width="400px" align="left" noClip="false">Thema</owc-table-header-cell>
         <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
         <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
-        <owc-table-header-cell width="175px"></owc-table-header-cell>
+        <owc-table-header-cell width="auto">Jahrgang</owc-table-header-cell>
+        <owc-table-header-cell width="auto">Status</owc-table-header-cell>
+        <owc-table-header-cell width="55px"></owc-table-header-cell>
       </owc-table-header>
 
       <owc-table-body>
         <ng-container *ngFor="let praxisphase of filteredProjects">
-          <owc-table-row>
+          <owc-table-row *ngIf="userService.activeUser.job === praxisphase.job_group && userService.activeUser.year === praxisphase.year" expandable="">
             <owc-table-cell>{{ praxisphase.name }}</owc-table-cell>
             <owc-table-cell>{{ praxisphase.abba }}</owc-table-cell>
             <owc-table-cell>{{ praxisphase.job_group }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.year }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.status }}</owc-table-cell>
             <owc-table-cell>
               <owc-button onclick="">Send E-Mail</owc-button>
             </owc-table-cell>
+            <div slot="expanded"> {{ praxisphase.description }} </div>
           </owc-table-row>
         </ng-container>
       </owc-table-body>
+    </owc-table>
 
+  </div>
+
+  <!-- all -->
+  <div>
+    <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
+      Praxisphasen für alle ...
+    </owc-typography>
+
+    <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
+      <owc-table-header elevated sticky>
+        <owc-table-header-cell width="400px" align="left" noClip="false">Thema</owc-table-header-cell>
+        <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
+        <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
+        <owc-table-header-cell width="auto">Jahrgang</owc-table-header-cell>
+        <owc-table-header-cell width="auto">Status</owc-table-header-cell>
+        <owc-table-header-cell width="55px"></owc-table-header-cell>
+      </owc-table-header>
+
+      <owc-table-body>
+        <ng-container *ngFor="let praxisphase of filteredProjects">
+          <owc-table-row expandable="">
+            <owc-table-cell>{{ praxisphase.name }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.abba }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.job_group }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.year }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.status }}</owc-table-cell>
+            <owc-table-cell>
+              <owc-button onclick="">Send E-Mail</owc-button>
+            </owc-table-cell>
+            <div slot="expanded"> {{ praxisphase.description }} </div>
+          </owc-table-row>
+        </ng-container>
+      </owc-table-body>
     </owc-table>
   </div>
 </div>
