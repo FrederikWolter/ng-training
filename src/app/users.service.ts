@@ -28,10 +28,18 @@ export interface User {
 export const userList: Array<User> = [
   {
     id: 1,
-    name: 'Frederik Wolter',
+    name: 'Frederik',
     password: '1234',
     role: 'apprentice',
     year: 2020,
+    job: 'AI',
+  },
+  {
+    id: 2,
+    name: 'Kevin',
+    password: '1234',
+    role: 'abba',
+    year: 0,
     job: 'AI',
   }
 ];
