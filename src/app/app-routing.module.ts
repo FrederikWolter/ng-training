@@ -7,6 +7,7 @@ import { LandingComponent } from './pages/landing-page/landing/landing.component
 import { StartComponent } from './pages/start/start.component';
 import { AddProjectPopUpComponent } from './pages/abba-page/add-project-pop-up/add-project-pop-up.component';
 
+// URL Links
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'apprentice', component: InternshipTableComponent },

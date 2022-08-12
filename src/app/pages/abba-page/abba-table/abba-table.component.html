@@ -1,7 +1,9 @@
-<owc-table #tableElement [height]="'auto'" [style]="'top: 50px'">
+<owc-table #tableElement [height]="'auto'" [style]="'top: 50px'" [style.width.%]="80" [style.margin-left.%]="10" [style.margin-right.%]="10">
     <owc-table-header elevated sticky>
 
       <owc-table-header-cell width="33.33%" resizable>Titel</owc-table-header-cell>
+
+      <owc-table-header-cell width="auto" resizable>Job Gruppe</owc-table-header-cell>
 
       <owc-table-header-cell width="auto" resizable>Jahrgang</owc-table-header-cell>
 
@@ -13,10 +15,12 @@
 
         <ng-container *ngFor="let project of projectList">
 
-            <owc-table-row *ngIf="project.abba == 'Kevin Latusinski'" expandable>
+            <owc-table-row *ngIf="project.abba == showForUser" expandable>
 
                 <owc-table-cell> {{ project.name }}</owc-table-cell>
                 
+                <owc-table-cell> {{ project.job_group }} </owc-table-cell>
+
                 <owc-table-cell> {{ project.year }} </owc-table-cell>
                 
                 <owc-table-cell> {{ project.status }} </owc-table-cell>

@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
-import { Project, projectList } from '../../../project-info';
+import { jobGroupList, Project, projectList } from '../../../project-info';
 import { Components } from '@one/web-components';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-add-project-pop-up',
@@ -9,11 +10,15 @@ import { Components } from '@one/web-components';
   styleUrls: ['./add-project-pop-up.component.scss']
 })
 export class AddProjectPopUpComponent implements OnInit {
+  // Whether this should be visible or not
   visible = true;
+  // Error warning for unfilled inputs
   nameError = false;
   descriptionError = false;
   yearError = false;
-
+  // List of all avalable job groups for the dropdown input
+  jobGroupList = jobGroupList;
+  // Empty project
   project: Project = {
     id: 0,
     name: "",
@@ -24,13 +29,17 @@ export class AddProjectPopUpComponent implements OnInit {
     year: 0
   };
 
-  constructor(private route:Router) { }
+  constructor(private userService: UsersService) { 
+    // Set abba field as profile name
+    this.project.abba = this.userService.activeUser?.name || "Kein Abba gesetzt";
+  }
 
   ngOnInit() {
   }
 
-  open(){
-    console.log("Openned")
+  select(e: CustomEvent): void {
+    // Get selected job group from dropdown
+    this.project.job_group = jobGroupList[e.detail[0]];
   }
 
   close(){
@@ -46,6 +55,14 @@ export class AddProjectPopUpComponent implements OnInit {
     }
   }
 
+  /**
+   * Checks for right submission. 
+   * If one or more fields are empty the submission wont work and the fields 
+   * will go into error mode
+   * 
+   * If all fields are filled the created project will be stored in the global 
+   * projectList
+   */
   submit(){
     if(!this.project.name){
       this.nameError = true;
@@ -58,7 +75,7 @@ export class AddProjectPopUpComponent implements OnInit {
     }
 
     if(!(this.nameError || this.yearError || this.descriptionError)){
-      this.project.abba = 'Kevin Latusinski';
+      this.project.status = 'offen';
       projectList.push(this.project);
       this.close();
     }
