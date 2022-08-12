@@ -2,14 +2,15 @@
   <div style="display: 'flex'">
     <owc-input label="Suche" placeholder="Filter Thema..." type="text" variant="filled" [(ngModel)]="value"
       (inputChange)="onChange($event)" [style.margin-bottom.px]="30"></owc-input>
-
     <owc-button routerLink="/apprentice/profile" style="margin-left:auto;">Profil</owc-button>
   </div>
 
+  <!-- Button zum profile -->
   <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
     Praxisphasen für dich ...
   </owc-typography>
 
+  <!-- tabelle ausgefüllt mit Werten aus der Project info -->
   <div>
     <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
       <owc-table-header elevated sticky>

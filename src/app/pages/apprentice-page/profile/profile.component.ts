@@ -1,6 +1,8 @@
 import { NumberSymbol } from '@angular/common';
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/users.service';
+import { FileUploader } from 'ng2-file-upload';
+import { Components } from '@one/web-components';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +11,6 @@ import { UsersService } from 'src/app/users.service';
 })
 
 export class ProfileComponent {
-  
 public uID!: number | undefined;
 public uName!: string | undefined;
 public uJob!: string | undefined;
@@ -22,5 +23,5 @@ public uYear!: number| undefined;
     this.uRole = this.userService.activeUser?.role
     this.uYear = this.userService.activeUser?.year
   }
-
+uploader: FileUploader = new FileUploader({ url: "api/your_upload", removeAfterUpload: false, autoUpload: true });
 }

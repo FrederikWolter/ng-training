@@ -1,4 +1,11 @@
-<p>profile works!</p>
-{{uID}}
-{{uName}}
+<div class="infoborder">
+<owc-typography variant="title2" class="txtstyling">Profil</owc-typography>
+<owc-typography variant="title4" class="txtstyling">ID: {{uID}}</owc-typography>
+<owc-typography variant="title4" class="txtstyling">Name: {{uName}}</owc-typography>
+<owc-typography variant="title4" class="txtstyling">Job: {{uJob}}</owc-typography>
+<owc-typography variant="title4" class="txtstyling">Role: {{uRole}}</owc-typography>
+<owc-typography variant="title4" class="txtstyling">Year: {{uYear}}</owc-typography>
+</div>
+<br/><br/>
 
+<input ng2FileSelect type="file" accept=".xml" [uploader]="uploader" class="uploadstyling"/>
