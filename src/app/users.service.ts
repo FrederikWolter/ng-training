@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
+//Aktiver User
 export class UsersService {
 
   activeUser: User|undefined;
 
   constructor() { }
-
+  //User Anmeldung
   signIn(name: string, password: string): User|undefined {
     this.activeUser = userList.find(user => user.name === name && user.password === password);
     return this.activeUser;
@@ -16,6 +18,7 @@ export class UsersService {
 
 }
 
+//User Definition
 export interface User {
   id: number;
   name: string;
@@ -25,6 +28,8 @@ export interface User {
   job: 'AI'|'WI';
 }
 
+
+//User Sammlung
 export const userList: Array<User> = [
   {
     id: 1,
