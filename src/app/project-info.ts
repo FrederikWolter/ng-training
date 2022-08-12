@@ -8,8 +8,20 @@ export interface Project {
     status: undefined | 'offen' | 'bewerbungsphase' | 'besetzt';
 } 
   
+/**
+ * List of all available status entries
+ */
 export const statusList: ('offen' | 'bewerbungsphase' | 'besetzt')[] = ['offen', 'bewerbungsphase', 'besetzt'];
+/**
+ * List of all available job groups
+ */
 export const jobGroupList: ('AI' | 'WI' | 'WING')[] = ['AI', 'WI', 'WING'];
+
+/**
+ * List of all hard coded projects.
+ * Can changed in the future due to the app-project-pop-up page which can 
+ * add new entries
+ */
 export const projectList :Project[] = [
     {
         id: 1,
