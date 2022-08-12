@@ -3,11 +3,11 @@
     <owc-grid item m="1" s="0" *ngIf="!userService.activeUser"></owc-grid>
 
     <owc-grid item m="1" style="background-color: '#fafafa'" [style.padding.px]="25" *ngIf="!userService.activeUser">
-        <owc-input label="Username" [(ngModel)]="username" required [style.width.%]="100" [style.margin.px]="10">
+        <owc-input label="Nutzername" [(ngModel)]="username" required [style.width.%]="100" [style.margin.px]="10">
             <owc-icon slot="prefix" name="user"></owc-icon>
         </owc-input>
 
-        <owc-input label="Password" [(ngModel)]="userpassword" type="password" required [style.width.%]="100"
+        <owc-input label="Passwort" [(ngModel)]="userpassword" type="password" required [style.width.%]="100"
             [style.margin.px]="10">
             <owc-icon slot="prefix" name="log_on"></owc-icon>
         </owc-input>
