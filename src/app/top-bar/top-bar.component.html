@@ -1,3 +1,4 @@
+<!-- Praxisphasen Verwaltung Schriftzug oben links -->
 <owc-double-global-area>
     <div slot="top">
         <a [routerLink]="['/']" style="text-decoration: none;">
@@ -5,10 +6,13 @@
         </a>
     </div>
 
+    <!-- Profil Symbol (ohne Routing) -->
     <div slot="primary" style="justifyContent: 'space-between'" [style.margin-bottom.px]="24">
         <div>
             <owc-icon-button type="legacy" flat icon="menu" ></owc-icon-button>
         </div>
+
+        <!-- Glocken Symbol (mit Routing) -->
         <div style="display: 'flex'; alignItems: 'center'">
             <owc-icon-button type="legacy" style="margin:'0 8px'" flat icon="user" ></owc-icon-button>
             <owc-icon-button type="legacy" style="margin:'0 8px'" flat icon="notification" [routerLink]="['start']"></owc-icon-button>
