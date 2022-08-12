@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ignoreElements } from 'rxjs';
 import { UsersService } from 'src/app/users.service';
 
 @Component({
@@ -11,13 +12,23 @@ export class LandingComponent implements OnInit {
   username!: string;
   userpassword!: string;
 
+  loginError: boolean = false;
+
   constructor(public userService:UsersService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.userService.signIn(this.username, this.userpassword);
+
+    if(this.userService.signIn(this.username, this.userpassword)){
+      this.loginError = false;
+      console.log("Login successful");
+    } else {
+      this.loginError = true;
+      console.log("Login failed");
+    }
+    
     console.log(this.userService.activeUser);
   }
 
