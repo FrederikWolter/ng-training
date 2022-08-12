@@ -11,5 +11,5 @@ import { Components } from '@one/web-components';
 })
 export class TestComponent {
   @ViewChild('progressSpinnerElement', { static: true })
-  progressSpinnerElement: Components.OwcProgressSpinner;
+  progressSpinnerElement!: Components.OwcProgressSpinner;
 }

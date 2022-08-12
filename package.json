@@ -22,6 +22,7 @@
     "@one/design-tokens": "^4.0.0",
     "@one/icons": "^4.1.1",
     "@one/web-components": "^4.0.3",
+    "ng2-search-filter": "^0.5.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -1,16 +1,41 @@
 import { Component, ViewChild } from '@angular/core';
-import { Components } from '@one/web-components'
+import { Components } from '@one/web-components';
 
 @Component({
   selector: 'app-internship-table',
   templateUrl: './internship-table.component.html',
   styleUrls: ['./internship-table.component.scss']
 })
-export class InternshipTableComponent {
+
+export class InternshipTableComponent{  
   @ViewChild('tableElement', { static: true }) tableElement!: Components.OwcTable;
   @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
   @ViewChild('inputElement', { static: true }) inputElement!: Components.OwcInput;
   @ViewChild('selectDropdownElement', { static: true }) selectDropdownElement!: Components.OwcSelectDropdown;
 
   value!: string;
+
+  onChange(event:any){
+    if(event.target.value = ""){
+      this.filteredPp = this.praxisphasen
+    }else{
+      this.filteredPp = this.praxisphasen.filter(
+        s => s.thema.includes(this.value)
+      );
+    }
+    console.log(event)
+  }
+
+  filteredPp: praxisphase[] = [];
+  praxisphasen: praxisphase[] = [{ thema: 'Alice', ansprechpartner: 'HE', beruf: 'AI'}, { thema: 'Bob', ansprechpartner: 'EM', beruf: 'AI' }];
+  constructor(){
+    this.filteredPp = this.praxisphasen;
+  }
+}
+
+export class praxisphase {
+  constructor(){}
+  public thema!: string;
+  public ansprechpartner!: string;
+  public beruf!: string;
 }

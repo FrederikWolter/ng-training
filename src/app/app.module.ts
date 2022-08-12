@@ -9,6 +9,8 @@ import { LandingComponent } from './pages/landing-page/landing/landing.component
 import { AbbaTableComponent } from './pages/abba-page/abba-table/abba-table.component';
 import { InternshipTableComponent } from './pages/apprentice-page/internship-table/internship-table.component';
 import { ProfileComponent } from './pages/apprentice-page/profile/profile.component';
+import {HttpClientModule} from '@angular/common/http'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ProfileComponent } from './pages/apprentice-page/profile/profile.compon
     AppRoutingModule,
     FormsModule,
     OneWebComponentsAngularModule,
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
