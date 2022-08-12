@@ -6,8 +6,8 @@ import { LandingComponent } from './pages/landing-page/landing/landing.component
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
-  { path: 'apprenticepage', component: InternshipTableComponent },
-  { path: 'apprenticepage/profile', component: ProfileComponent },
+  { path: 'apprentice', component: InternshipTableComponent },
+  { path: 'apprentice/profile', component: ProfileComponent },
 ];
 
 @NgModule({
