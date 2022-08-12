@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  username!: string;
+  userpassword!: string;
+
+  constructor(public userService:UsersService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    this.userService.signIn(this.username, this.userpassword);
+    console.log(this.userService.activeUser);
   }
 
 }
