@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Components } from '@one/web-components';
+import { Project, projectList } from 'src/app/project-info';
 
 @Component({
   selector: 'app-internship-table',
@@ -14,29 +15,20 @@ export class InternshipTableComponent{
   @ViewChild('selectDropdownElement', { static: true }) selectDropdownElement!: Components.OwcSelectDropdown;
 
   value!: string;
+  projectlist = projectList
 
   onChange(event:any){
     if(event.detail === ""){
-      this.filteredPp = this.praxisphasen
+      this.filteredPp = this.projectlist
     }else{
-      this.filteredPp = this.praxisphasen.filter(
-        s => s.thema.toLowerCase().includes(this.value.toLowerCase())
+      this.filteredPp = this.projectlist.filter(
+        s => s.name.toLowerCase().includes(this.value.toLowerCase())
       );
     }
-    console.log(event.detail)
-    console.log(event.target.value)
   }
 
-  filteredPp: praxisphase[] = [];
-  praxisphasen: praxisphase[] = [{ thema: 'Alice', ansprechpartner: 'HE', beruf: 'AI'}, { thema: 'Bob', ansprechpartner: 'EM', beruf: 'AI' }];
+  filteredPp: Project[] = [];
   constructor(){
-    this.filteredPp = this.praxisphasen;
+    this.filteredPp = this.projectlist;
   }
-}
-
-export class praxisphase {
-  constructor(){}
-  public thema!: string;
-  public ansprechpartner!: string;
-  public beruf!: string;
 }

@@ -1,7 +1,7 @@
 <div class="spacer">
   <owc-input
     label="Suche"
-    maxLength="20"
+    maxLength="50"
     placeholder="Filter Thema..."
     type="text"
     variant="filled"
@@ -10,7 +10,7 @@
     (inputChange)="onChange($event)"
   ></owc-input>
 
-  <a routerLink="/apprenticepage/profile"
+  <a routerLink="/apprentice/profile"
     ><owc-button class="buttonPos">Profil</owc-button></a
   >
 </div>
@@ -22,7 +22,7 @@
     scroll-hide-timeout="1000"
   >
     <owc-table-header elevated sticky>
-      <owc-table-header-cell width="200px" align="left" noClip="false"
+      <owc-table-header-cell width="400px" align="left" noClip="false"
         >Thema</owc-table-header-cell
       >
       <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
@@ -33,9 +33,9 @@
     <owc-table-body>
       <ng-container *ngFor="let praxisphase of filteredPp">
         <owc-table-row>
-          <owc-table-cell>{{ praxisphase.thema }}</owc-table-cell>
-          <owc-table-cell>{{ praxisphase.ansprechpartner }}</owc-table-cell>
-          <owc-table-cell>{{ praxisphase.beruf }}</owc-table-cell>
+          <owc-table-cell>{{ praxisphase.name }}</owc-table-cell>
+          <owc-table-cell>{{ praxisphase.abba }}</owc-table-cell>
+          <owc-table-cell>{{ praxisphase.job_group }}</owc-table-cell>
           <owc-table-cell><owc-button onclick="">Send E-Mail</owc-button></owc-table-cell>
         </owc-table-row>
       </ng-container>
