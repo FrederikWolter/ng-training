@@ -12,8 +12,8 @@ import { Project, projectList } from '../abba-project';
   styleUrls: ['./abba-table.component.scss']
 })
 export class AbbaTableComponent implements OnInit {
+  projectList = projectList
 
-  @ViewChild('projectList', { static: true }) projectList = projectList;
   @ViewChild('tableElement', { static: true }) tableElement!: Components.OwcTable;
   @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
   constructor() { }
