@@ -3,7 +3,7 @@
     <owc-input label="Suche" placeholder="Filter Thema..." type="text" variant="filled" [(ngModel)]="value"
       (inputChange)="onChange($event)" [style.margin-bottom.px]="30"></owc-input>
 
-    <owc-button routerLink="/apprenticepage/profile" style="margin-left:auto;">Profil</owc-button>
+    <owc-button routerLink="/apprentice/profile" style="margin-left:auto;">Profil</owc-button>
   </div>
 
   <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
@@ -13,7 +13,7 @@
   <div>
     <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
       <owc-table-header elevated sticky>
-        <owc-table-header-cell width="200px" align="left" noClip="false">Thema</owc-table-header-cell>
+        <owc-table-header-cell width="400px" align="left" noClip="false">Thema</owc-table-header-cell>
         <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
         <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
         <owc-table-header-cell width="175px"></owc-table-header-cell>
