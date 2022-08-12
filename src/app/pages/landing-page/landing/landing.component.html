@@ -25,13 +25,13 @@
     <div *ngIf="userService.activeUser">
         <!-- abba buttons -->
         <owc-grid item s="1" *ngIf="userService.activeUser.role == 'abba'" [style.padding-top.px]="20">
-            <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
+            <owc-button [routerLink]="['abba']" disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
-                abba Button 1
+                ABBA Button 1
             </owc-button>
-            <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
+            <owc-button [routerLink]="['abba/newProject']" disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
-                abba Button 2
+                ABBA Button 2
             </owc-button>
             <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
@@ -41,13 +41,13 @@
 
         <!-- apprentice button -->
         <owc-grid item s="1" *ngIf="userService.activeUser.role == 'apprentice'" [style.padding-top.px]="20">
-            <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
+            <owc-button [routerLink]="['apprentice']" disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
-                apprentice Button 1
+                Azubi Startseite
             </owc-button>
-            <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
+            <owc-button [routerLink]="['apprentice/profile']" disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
-                apprentice Button 2
+                Azubi profile
             </owc-button>
             <owc-button disable-ripple flat round type="button" variant="primary" [style.width.%]="100"
                 [style.margin-top.px]="10">
