@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { Components } from '@one/web-components';
+import { UsersService } from 'src/app/users.service';
 
 import { Project, projectList } from '../../../project-info';
 
@@ -13,10 +14,13 @@ import { Project, projectList } from '../../../project-info';
 })
 export class AbbaTableComponent implements OnInit {
   projectList = projectList;
+  showForUser = "";
 
   @ViewChild('tableElement', { static: true }) tableElement!: Components.OwcTable;
   @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
-  constructor() { }
+  constructor(private userService: UsersService) {
+      this.showForUser = userService.activeUser?.name || "";
+   }
 
   
 
