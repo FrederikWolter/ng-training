@@ -16,14 +16,15 @@ export class InternshipTableComponent{
   value!: string;
 
   onChange(event:any){
-    if(event.target.value = ""){
+    if(event.detail === ""){
       this.filteredPp = this.praxisphasen
     }else{
       this.filteredPp = this.praxisphasen.filter(
-        s => s.thema.includes(this.value)
+        s => s.thema.toLowerCase().includes(this.value.toLowerCase())
       );
     }
-    console.log(event)
+    console.log(event.detail)
+    console.log(event.target.value)
   }
 
   filteredPp: praxisphase[] = [];
