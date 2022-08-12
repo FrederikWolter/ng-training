@@ -31,10 +31,9 @@
 
     <div slot="header">
         All Ihre Projekte
-        <owc-button #buttonElement style="text-align: center !important;">
-            <owc-icon type="legacy" variant="primary" name="assign" style="filter: brightness(0) invert(1);"></owc-icon> 
-            Neu
-        </owc-button>
+        <owc-chip icon="create">
+            <a [routerLink]="['/abba/newProject']">Neues Projekt </a>
+        </owc-chip>
     </div>
-  </owc-table>
+</owc-table>
 

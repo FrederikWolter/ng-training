@@ -1,0 +1,15 @@
+<owc-modal-dialog #modalDialogElement [(ngModel)]="visible" disable-backdrop-click disable-escape-keydown disable-scroll-lock>      
+    <div slot="header">Ein Neues Projekt eintragen</div>
+
+    <owc-input label="Projektname" [(ngModel)]="project.name" required [error]="nameError" maxLength="20" type="text">
+    </owc-input>
+    <owc-input label="Jahrgang" [(ngModel)]="project.year" required [error]="yearError">
+    </owc-input>
+    <owc-input label="Description" [(ngModel)]="project.description" required [error]="descriptionError">
+    </owc-input>
+    <div slot="actions">
+        <owc-button variant="secondary" flat (click)="close()">Close</owc-button>
+        <owc-button flat (click)="submit()" [routerLink]="['/abba']">Submit</owc-button>
+    </div>
+
+</owc-modal-dialog>    

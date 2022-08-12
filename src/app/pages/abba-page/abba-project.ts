@@ -1,10 +1,10 @@
 export interface Project {
-    id: number;
-    name: string;
-    description: string;
-    year: number;
-    abba: string;
-    status: string;
+    id?: number;
+    name?: string;
+    description?: string;
+    year?: number;
+    abba?: string;
+    status?: string;
   } 
   
   export const projectList = [

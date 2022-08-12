@@ -18,6 +18,8 @@ export class AbbaTableComponent implements OnInit {
   @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
   constructor() { }
 
+  
+
   ngOnInit(): void {
   }
 
