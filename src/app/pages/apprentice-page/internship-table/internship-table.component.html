@@ -1,46 +1,37 @@
-<div class="spacer">
-  <owc-input
-    label="Suche"
-    maxLength="20"
-    placeholder="Filter Thema..."
-    type="text"
-    variant="filled"
-    class="searchfilter"
-    [(ngModel)] = "value"
-    (inputChange)="onChange($event)"
-  ></owc-input>
+<div [style.margin-left.%]="10" [style.margin-right.%]="10">
+  <div style="display: 'flex'">
+    <owc-input label="Suche" placeholder="Filter Thema..." type="text" variant="filled" [(ngModel)]="value"
+      (inputChange)="onChange($event)" [style.margin-bottom.px]="30"></owc-input>
 
-  <a routerLink="/apprenticepage/profile"
-    ><owc-button class="buttonPos">Profil</owc-button></a
-  >
-</div>
-<div>
-  <owc-table
-    #tableElement
-    drag-enabled
-    height="auto"
-    scroll-hide-timeout="1000"
-  >
-    <owc-table-header elevated sticky>
-      <owc-table-header-cell width="200px" align="left" noClip="false"
-        >Thema</owc-table-header-cell
-      >
-      <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
-      <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
-      <owc-table-header-cell width="175px"></owc-table-header-cell>
-    </owc-table-header>
+    <owc-button routerLink="/apprentice/profile" style="margin-left:auto;">Profil</owc-button>
+  </div>
 
-    <owc-table-body>
-      <ng-container *ngFor="let praxisphase of filteredPp">
-        <owc-table-row>
-          <owc-table-cell>{{ praxisphase.thema }}</owc-table-cell>
-          <owc-table-cell>{{ praxisphase.ansprechpartner }}</owc-table-cell>
-          <owc-table-cell>{{ praxisphase.beruf }}</owc-table-cell>
-          <owc-table-cell><owc-button onclick="">Send E-Mail</owc-button></owc-table-cell>
-        </owc-table-row>
-      </ng-container>
-    </owc-table-body>
+  <owc-typography variant="title6" [style.margin-top.px]="30" [style.margin-bottom.px]="10">
+    Praxisphasen für dich ...
+  </owc-typography>
 
-    <div slot="header">Praxisphasen</div>
-  </owc-table>
+  <div>
+    <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
+      <owc-table-header elevated sticky>
+        <owc-table-header-cell width="400px" align="left" noClip="false">Thema</owc-table-header-cell>
+        <owc-table-header-cell width="25%">Ansprechpartner</owc-table-header-cell>
+        <owc-table-header-cell width="auto">Beruf</owc-table-header-cell>
+        <owc-table-header-cell width="175px"></owc-table-header-cell>
+      </owc-table-header>
+
+      <owc-table-body>
+        <ng-container *ngFor="let praxisphase of filteredPp">
+          <owc-table-row>
+            <owc-table-cell>{{ praxisphase.thema }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.ansprechpartner }}</owc-table-cell>
+            <owc-table-cell>{{ praxisphase.beruf }}</owc-table-cell>
+            <owc-table-cell>
+              <owc-button onclick="">Send E-Mail</owc-button>
+            </owc-table-cell>
+          </owc-table-row>
+        </ng-container>
+      </owc-table-body>
+
+    </owc-table>
+  </div>
 </div>
