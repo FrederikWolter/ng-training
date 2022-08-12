@@ -11,7 +11,7 @@
   </owc-typography>
 
   <!-- tabelle ausgefüllt mit Werten aus der Project info -->
-  <div>
+  <div *ngIf="userService.activeUser">
 
     <owc-table #tableElement height="auto" scroll-hide-timeout="1000">
       <owc-table-header elevated sticky>
