@@ -5,7 +5,7 @@
     </owc-input>
 
     
-    <owc-select-dropdown #selectDropdownElement name="job_group" label="Job-Gruppe" (selectChange)="select($event)" required>
+    <owc-select-dropdown name="job_group" label="Job-Gruppe" (selectChange)="select($event)" required>
       <owc-list-item *ngFor="let group of jobGroupList"> {{ group }} </owc-list-item>
     </owc-select-dropdown>
 
