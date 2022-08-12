@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Components } from '@one/web-components';
 import { Project, projectList } from 'src/app/project-info';
+import { UsersService } from 'src/app/users.service';
 
 @Component({
   selector: 'app-internship-table',
@@ -10,7 +11,7 @@ import { Project, projectList } from 'src/app/project-info';
 export class InternshipTableComponent {
 
   value!: string;
-  projectList = projectList
+  projectList: Project[] = projectList;
   filteredProjects: Project[] = [];
 
   onChange(event: any) {
@@ -24,7 +25,8 @@ export class InternshipTableComponent {
     }
   }
 
-  constructor() {
+  constructor(public userService: UsersService) {
     this.filteredProjects = this.projectList;
   }
+
 }

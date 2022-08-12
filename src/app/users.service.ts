@@ -22,7 +22,7 @@ export interface User {
   password: string;
   role: 'apprentice'|'abba';
   year: number;
-  job: 'AI'|'WI';
+  job: 'AI'|'WI'|'WING';
 }
 
 export const userList: Array<User> = [
