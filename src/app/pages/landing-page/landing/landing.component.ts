@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/users.service';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
+// Anzeigen Definition
 export class LandingComponent implements OnInit {
 
   username!: string;
@@ -18,6 +19,7 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Logik für rote Schrift bei falschen LogIn Daten
   onSubmit() {
 
     if(this.userService.signIn(this.username, this.userpassword)){
