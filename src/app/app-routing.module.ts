@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'apprentice', component: InternshipTableComponent },
   { path: 'apprentice/profile', component: ProfileComponent },
   { path: 'abba', component: AbbaTableComponent },
-  { path: 'abba/newProject', component: AddProjectPopUpComponent }
-  { path: 'start', component: StartComponent},
+  { path: 'abba/newProject', component: AddProjectPopUpComponent },
+  { path: 'start', component: StartComponent}
 ];
 
 @NgModule({
