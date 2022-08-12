@@ -1,1 +1,18 @@
-<p>top-bar works!</p>
+<owc-double-global-area>
+    <div slot="top">
+        <a [routerLink]="['/']" style="text-decoration: none;">
+            <owc-typography variant="title5" style="color: white;">Praxisphasen Verwaltung</owc-typography>
+        </a>
+    </div>
+
+    <div slot="primary" style="justifyContent: 'space-between'" [style.margin-bottom.px]="24">
+        <div>
+            <owc-icon-button type="legacy" flat icon="menu" ></owc-icon-button>
+        </div>
+        <div style="display: 'flex'; alignItems: 'center'">
+            <owc-icon-button type="legacy" style="margin:'0 8px'" flat icon="user" ></owc-icon-button>
+            <owc-icon-button type="legacy" style="margin:'0 8px'" flat icon="notification" ></owc-icon-button>
+            <owc-icon type="legacy" style="width: '48px'; marginLeft: '8px'; color: '#0B41CD'; float: 'right'" name="roche_logo"></owc-icon>
+        </div>
+    </div>
+</owc-double-global-area>
