@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ignoreElements } from 'rxjs';
 import { UsersService } from 'src/app/users.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class LandingComponent implements OnInit {
 
   loginError: boolean = false;
 
-  constructor(public userService:UsersService) { }
+  constructor(public userService: UsersService) { }
 
   ngOnInit(): void {
   }
