@@ -7,28 +7,24 @@ import { Project, projectList } from 'src/app/project-info';
   templateUrl: './internship-table.component.html',
   styleUrls: ['./internship-table.component.scss']
 })
-
-export class InternshipTableComponent{  
-  @ViewChild('tableElement', { static: true }) tableElement!: Components.OwcTable;
-  @ViewChild('buttonElement', { static: true }) buttonElement!: Components.OwcButton;
-  @ViewChild('inputElement', { static: true }) inputElement!: Components.OwcInput;
-  @ViewChild('selectDropdownElement', { static: true }) selectDropdownElement!: Components.OwcSelectDropdown;
+export class InternshipTableComponent {
 
   value!: string;
-  projectlist = projectList
+  projectList = projectList
+  filteredProjects: Project[] = [];
 
-  onChange(event:any){
-    if(event.detail === ""){
-      this.filteredPp = this.projectlist
-    }else{
-      this.filteredPp = this.projectlist.filter(
-        s => s.name.toLowerCase().includes(this.value.toLowerCase())
+  onChange(event: any) {
+    // search empty?
+    if (event.detail === "") {
+      this.filteredProjects = this.projectList  // take all projects
+    } else {
+      this.filteredProjects = this.projectList.filter(
+        project => project.name.toLowerCase().includes(this.value.toLowerCase())  // filter projects
       );
     }
   }
 
-  filteredPp: Project[] = [];
-  constructor(){
-    this.filteredPp = this.projectlist;
+  constructor() {
+    this.filteredProjects = this.projectList;
   }
 }
