@@ -10,7 +10,6 @@ import { LandingComponent } from './pages/landing-page/landing/landing.component
 import { AbbaTableComponent } from './pages/abba-page/abba-table/abba-table.component';
 import { InternshipTableComponent } from './pages/apprentice-page/internship-table/internship-table.component';
 import { ProfileComponent } from './pages/apprentice-page/profile/profile.component';
-import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    OneWebComponentsAngularModule,
-    HttpClientModule
+    OneWebComponentsAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent],
